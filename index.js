@@ -11,7 +11,8 @@ function updateHistoryHtml(text) {
 
 numButtons.forEach(numButton => {
     numButton.addEventListener("click", () => {
-        operationHistory = operationHistory + numButton.innerHTML;
+        let num1 = numButton.innerHTML;
+        operationHistory = operationHistory + num1;
         updateHistoryHtml(operationHistory);
         console.log(operationHistory);
     });
