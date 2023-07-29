@@ -1,7 +1,7 @@
 let numButtons = document.querySelectorAll(".num-btn");
 let operationButtons = document.querySelectorAll(".operation-btn");
 let operationHistoryHtml = document.querySelector(".before");
-let answer;
+let answer = 0;
 let operationHistory = "";
 
 
@@ -11,8 +11,11 @@ function updateHistoryHtml(text) {
 
 numButtons.forEach(numButton => {
     numButton.addEventListener("click", () => {
-        let num1 = numButton.innerHTML;
-        operationHistory = operationHistory + num1;
+        let numberPressed = numButton.innerHTML;
+        if (operationHistory.includes(".")) {
+            return;
+        }
+        operationHistory = operationHistory + numberPressed;
         updateHistoryHtml(operationHistory);
         console.log(operationHistory);
     });
