@@ -16,6 +16,7 @@ function updateHistoryHtml() {
 
 function clearAll() {
   operationHistory = " ";
+  hasDecimalPoint = false;
   updateHistoryHtml();
 }
 
